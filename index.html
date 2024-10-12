@@ -1,0 +1,38 @@
+<!-- Input field for the message -->
+<textarea id="whatsappMessage" rows="4" cols="50" placeholder="Type your message here..." style="resize: none;"></textarea>
+
+<!-- Send button -->
+<button id="sendMessage" style="cursor: pointer; padding: 10px 20px; background-color: #25D366; color: white; border: none; border-radius: 5px;">
+    Send to WhatsApp
+</button>
+
+<script>
+    document.getElementById("sendMessage").addEventListener("click", function() {
+        var message = document.getElementById("whatsappMessage").value;
+        var phoneNumber = "918940001929"; // Add your WhatsApp number here
+        var whatsappUrl = "https://wa.me/" + phoneNumber + "?text=" + encodeURIComponent(message);
+
+        // Redirect to WhatsApp with the typed message
+        window.open(whatsappUrl, '_blank');
+    });
+</script>
+
+<style>
+    textarea {
+        display: block;
+        margin-bottom: 10px;
+        padding: 10px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+        width: 300px;
+    }
+
+    button {
+        display: inline-block;
+        font-size: 16px;
+    }
+
+    button:hover {
+        background-color: #1EBE54;
+    }
+</style>
